@@ -2,6 +2,8 @@
 
 Experimentations with PROXY protocol.
 
+https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt
+
 ## Results
 
 netcat as the upstream of the edge server (nginx writing the PROXY protocol header):
