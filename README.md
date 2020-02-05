@@ -1,4 +1,4 @@
-# playground-proxy-protocol
+# lab-proxy-protocol
 
 Experimentations with PROXY protocol.
 
