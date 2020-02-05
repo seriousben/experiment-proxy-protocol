@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  edge:
+    image: nginx
+    ports:
+    - "8080:80"
+    volumes:
+    - "./nginx-edge.conf:/etc/nginx/nginx.conf:ro"
+
+  proxy:
+    image: nginx
+    volumes:
+    - "./nginx-proxy.conf:/etc/nginx/nginx.conf:ro"
+
+  netcat:
+    build: netcat
+    restart: always
+    command: -vl 8080
+
