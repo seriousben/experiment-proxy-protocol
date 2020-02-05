@@ -26,7 +26,7 @@ netcat_1  | User-Agent: curl/7.68.0
 netcat_1  | Accept: */*
 ```
 
-netcat of haproxy writing a version 2 of the PROXY protocol header:
+netcat + hexdump as the upstream of the edge server (haproxy writing a version 2 of the PROXY protocol header):
 ```
 netcat_1        | 00000000  0d 0a 0d 0a 00 0d 0a 51  55 49 54 0a 21 11 00 0c  |.......QUIT.!...|
 netcat_1        | 00000010  ac 13 00 01 ac 13 00 03  a6 52 00 50 47 45 54 20  |.........R.PGET |
