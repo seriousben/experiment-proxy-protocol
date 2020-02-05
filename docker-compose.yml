@@ -1,20 +1,29 @@
 version: "3.1"
 
 services:
-  edge:
-    image: nginx
+  haproxy_edge:
+    image: haproxy
     ports:
     - "8080:80"
     volumes:
-    - "./nginx-edge.conf:/etc/nginx/nginx.conf:ro"
+    - "./haproxy/haproxy-edge.cfg:/usr/local/etc/haproxy/haproxy.cfg"
+
+  nginx_edge:
+    image: nginx
+    ports:
+    - "8081:80"
+    volumes:
+    - "./nginx/nginx-edge.conf:/etc/nginx/nginx.conf:ro"
 
   proxy:
     image: nginx
     volumes:
-    - "./nginx-proxy.conf:/etc/nginx/nginx.conf:ro"
+    - "./nginx/nginx-proxy.conf:/etc/nginx/nginx.conf:ro"
 
   netcat:
     build: netcat
     restart: always
-    command: -vl 8080
+    # entrypoint: ""
+    # command: sh -c "nc -vl 8080 | hexdump -C"
+    command: "nc -vl 8080
 
