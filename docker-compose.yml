@@ -15,6 +15,13 @@ services:
     volumes:
     - "./nginx/nginx-edge.conf:/etc/nginx/nginx.conf:ro"
 
+  nginx_far_edge:
+    image: nginx
+    ports:
+    - "8082:80"
+    volumes:
+    - "./nginx/nginx-far-edge.conf:/etc/nginx/nginx.conf:ro"
+
   proxy:
     image: nginx
     volumes:
@@ -25,5 +32,8 @@ services:
     restart: always
     # entrypoint: ""
     # command: sh -c "nc -vl 8080 | hexdump -C"
-    command: "nc -vl 8080
+    command: "-vl 8080"
+
+  proxy_debugger:
+    build: proxy-debugger
 
