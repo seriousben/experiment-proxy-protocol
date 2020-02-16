@@ -60,6 +60,7 @@ netcat_1          | 00000070  72 2d 41 67 65 6e 74 3a  20 63 75 72 6c 2f 37 2e  
 netcat_1          | 00000080  36 38 2e 30 0d 0a 41 63  63 65 70 74 3a 20 2a 2f  |68.0..Accept: */|
 netcat_1          | 00000090  2a 0d 0a 0d 0a                                    |*....|
 netcat_1          | 00000095
+```
 
 ## nginx and PROXY protocol
 
